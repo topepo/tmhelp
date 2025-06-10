@@ -1,0 +1,35 @@
+Type: Package
+Package: tmhelp
+Title: Chat Interface for Tidymodels Help
+Version: 0.1.0
+Authors@R: c(
+    person("Max", "Kuhn", , "max@posit.co", role = c("aut", "cre"),
+           comment = c(ORCID = "0000-0003-2402-136X")),
+    person("Tomasz", "Kalinowski", , "tomasz@posit.co", role = "aut"),
+    person("Posit Software, PBC", role = c("cph", "fnd"),
+           comment = c(ROR = "03wc8by49"))
+  )
+Description: Launches an interactive chat app that retrieves and
+    summarizes relevant Tidymodels documentation and on-line materials
+    using both semantic and keyword-based search via an OpenAI-powered
+    assistant. Returns authoritative excerpts, includes links to official
+    resources, and helps users accomplish specific Tidymodels tasks
+    quickly.
+License: MIT + file LICENSE
+Depends:
+    R (>= 4.3.0)
+Imports:
+    bslib,
+    dplyr,
+    ellmer,
+    promises,
+    ragnar (>= 0.1.0.9000),
+    rlang,
+    shiny,
+    shinychat,
+    stringi
+Remotes:
+    tidyverse/ragnar
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.2
