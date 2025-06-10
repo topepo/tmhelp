@@ -5,7 +5,8 @@
 <!-- badges: end -->
 
 A focused chat app for quick, authoritative answers from tidymodels
-documentation.
+documentation. Based on 
+[`t-kalinowski/quartohelp`](https://github.com/t-kalinowski/quartohelp).
 
 `tmhelp` launches an interactive chat interface that finds and
 summarizes relevant excerpts from tidymodels documentation using both
@@ -16,7 +17,7 @@ accomplish specific tidymodels tasks.
 
 ## Screenshot
 
-![Screenshot of tmhelp app](man/figures/app-screenshot.png)
+<!-- ![Screenshot of tmhelp app](man/figures/app-screenshot.png) -->
 
 ## Usage
 
@@ -25,7 +26,7 @@ accomplish specific tidymodels tasks.
 tmhelp::ask()
 
 # Start with a specific question
-tmhelp::ask("How do I make a two column layout?")
+tmhelp::ask("How do I tune a regularized logistic regression model?")
 ```
 
 ## Installation
