@@ -21,7 +21,7 @@ Depends:
 Imports:
     bslib,
     dplyr,
-    ellmer,
+    ellmer (>= 0.2.1),
     promises,
     ragnar (>= 0.1.0.9000),
     rlang,
