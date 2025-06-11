@@ -14,17 +14,17 @@ ask(
 \item{question}{A character string with the user's question (optional). If
 not provided, app opens with a blank chat.}
 
-\item{client}{An `ellmer::Chat` object. Defaults to openai 'gpt-4.1'. Note
-that if a different chat provider is used for chat, an `OPENAI_API_KEY`
+\item{client}{An \code{ellmer::Chat} object. Defaults to openai 'gpt-4.1'. Note
+that if a different chat provider is used for chat, an \code{OPENAI_API_KEY}
 must still be set for embedding vector search.}
 
 \item{interactive}{Logical; whether to launch the interactive Shiny app
-(default `TRUE`). If `FALSE`, returns chat response directly if `question`
-is provided, otherwise, the `client` is returned with the retrieval tool
+(default \code{TRUE}). If \code{FALSE}, returns chat response directly if \code{question}
+is provided, otherwise, the \code{client} is returned with the retrieval tool
 registered and system prompt set.}
 }
 \value{
-Invisibly returns the `client` object for further use or inspection.
+Invisibly returns the \code{client} object for further use or inspection.
 }
 \description{
 Starts an interactive chat interface for asking questions about tidymodels
@@ -33,13 +33,19 @@ retrieval system over an embedded tidymodels knowledge store.
 }
 \details{
 This app combines semantic and text-based search, returning authoritative
-excerpts from tidymodels documentation.
+excerpts from tidymodels documentation. The data that make up the knowledge
+store are taken from:
+\itemize{
+\item Public pkgdown sites for open-source packages, such as \code{parsnip.tidymodels.org}
+\item Websites produced by members of the tidymodels team, such as \code{tidymodels.org}, \code{tmwr.org}, and \code{tidymodels.aml4td.org}
+\item Training materials produced by Posit (such as \code{workshops.tidymodels.org})
+}
 }
 \examples{
 if (interactive() && nzchar(Sys.getenv("OPENAI_API_KEY"))) {
-  tmhelp::ask("How can I make a two column layout?")
+  ask("How can tune a ridge regression model?")
 }
 }
 \seealso{
-[ellmer::chat_openai], [ragnar::ragnar_retrieve]
+\code{\link[ellmer:chat_openai]{ellmer::chat_openai()}}, \code{\link[ragnar:ragnar_retrieve]{ragnar::ragnar_retrieve()}}
 }

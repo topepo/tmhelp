@@ -5,7 +5,11 @@
 #' retrieval system over an embedded tidymodels knowledge store.
 #'
 #' This app combines semantic and text-based search, returning authoritative
-#' excerpts from tidymodels documentation.
+#' excerpts from tidymodels documentation. The data that make up the knowledge
+#' store are taken from:
+#' -  Public pkgdown sites for open-source packages, such as `parsnip.tidymodels.org`
+#' -  Websites produced by members of the tidymodels team, such as `tidymodels.org`, `tmwr.org`, and `tidymodels.aml4td.org`
+#' -  Training materials produced by Posit (such as `workshops.tidymodels.org`)
 #'
 #' @param question A character string with the user's question (optional). If
 #'   not provided, app opens with a blank chat.
@@ -19,12 +23,12 @@
 #'
 #' @return Invisibly returns the `client` object for further use or inspection.
 #'
-#' @seealso [ellmer::chat_openai], [ragnar::ragnar_retrieve]
+#' @seealso [ellmer::chat_openai()], [ragnar::ragnar_retrieve()]
 #' @importFrom rlang .data
 #' @export
 #' @examples
 #' if (interactive() && nzchar(Sys.getenv("OPENAI_API_KEY"))) {
-#'   tmhelp::ask("How can I make a two column layout?")
+#'   ask("How can tune a ridge regression model?")
 #' }
 ask <- function(
   question = NULL,
